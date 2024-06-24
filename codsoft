@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int a=14;
+int n;
+int attempt=0;
+cout<<"Guess the number between 1 to 100."<<endl;
+loop:
+{
+attempt++;
+cout<<"Now! Enter the number: "<<endl;
+if(!(cin>>n))
+{
+cout<<"Enter the positive integer between 1 to 100.";
+return 0;
+}
+if(n<1 || n>100)
+{
+cout<<"Enter the number between 1 to 100.";
+return 0;
+}
+}
+if(n==a)
+{
+cout<<"Congrats!!!! You found the value in "<<attempt<<" attempt.";
+}
+if(n<a)
+{
+if(a-n < 10)
+{
+cout<<"You are near. Increase your number.";
+goto loop;
+}
+cout<<"Your number is too low."<<endl;
+goto loop;
+}
+if(n>a)
+{
+if(n-a < 10)
+{
+cout<<"You are near. Decrease your number.";
+goto loop;
+}
+cout<<"Your number is too high."<<endl;
+goto loop;
+}
+}
